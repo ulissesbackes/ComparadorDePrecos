@@ -19,6 +19,10 @@ x86/
 node_modules/
 npm-debug.log*
 
+# Frontend build
+frontend/build/
+frontend/node_modules/
+
 # Arquivos temporários
 tmp/
 temp/

@@ -13,11 +13,12 @@ builder.Services.AddSingleton<IMarketProvider, MinhacooperProvider>();
 
 builder.Services.AddScoped<ComparadorService>();
 
+// 🔥 CONFIGURAÇÃO CORS ATUALIZADA 🔥
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:3000") // URL do React
+        policy.WithOrigins("http://localhost:5173", "http://localhost:5174", "http://localhost:3000") // URLs do Vite + React
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -25,6 +26,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// 🔥 MIDDLEWARE CORS - IMPORTANTE: Coloque ANTES dos MapGet 🔥
 app.UseCors("ReactApp");
 
 app.MapGet("/", () => "Comparador de Preços API ativa!");

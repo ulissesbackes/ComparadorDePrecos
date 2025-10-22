@@ -1,0 +1,6 @@
+@ComparadorDePrecos_HostAddress = http://localhost:5186
+
+GET {{ComparadorDePrecos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

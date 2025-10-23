@@ -1,4 +1,6 @@
-﻿namespace ProdutoService.API.DTOs;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ProdutoService.API.DTOs;
 
 public class ListaComprasDto
 {
@@ -11,8 +13,20 @@ public class ListaComprasDto
 
 public class CriarListaComprasDto
 {
+    [Required(ErrorMessage = "Nome é obrigatório")]
+    [StringLength(100, ErrorMessage = "Nome não pode exceder 100 caracteres")]
     public string Nome { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "UsuarioId é obrigatório")]
+    [Range(1, int.MaxValue, ErrorMessage = "UsuarioId deve ser maior que 0")]
     public int UsuarioId { get; set; }
+}
+
+public class AtualizarListaComprasDto
+{
+    [Required(ErrorMessage = "Nome é obrigatório")]
+    [StringLength(100, ErrorMessage = "Nome não pode exceder 100 caracteres")]
+    public string Nome { get; set; } = string.Empty;
 }
 
 public class ListaItemDto
@@ -26,6 +40,11 @@ public class ListaItemDto
 
 public class AdicionarItemListaDto
 {
+    [Required(ErrorMessage = "ProdutoId é obrigatório")]
+    [Range(1, int.MaxValue, ErrorMessage = "ProdutoId deve ser maior que 0")]
     public int ProdutoId { get; set; }
+
+    [Required(ErrorMessage = "Quantidade é obrigatória")]
+    [Range(1, 100, ErrorMessage = "Quantidade deve ser entre 1 e 100")]
     public int Quantidade { get; set; } = 1;
 }

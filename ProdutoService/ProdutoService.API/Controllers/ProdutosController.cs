@@ -6,7 +6,7 @@ using ProdutoService.Domain.Models;
 namespace ProdutoService.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 public class ProdutosController : ControllerBase
 {
     private readonly IProdutoRepository _produtoRepository;

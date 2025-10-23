@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>🔍 Comparador de Preços</h1>
-        <p>Encontre os melhores preços nos principais mercados</p>
+         <h1>🛒 Comparador de Preços</h1>
+        <p>Encontre os melhores preços nos seus mercados favoritos</p>
       </header>
       
       <main>

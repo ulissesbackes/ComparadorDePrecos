@@ -39,3 +39,7 @@ logs/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Configurações específicas do ProdutoService
+ProdutoService/docker-compose.override.yml
+ProdutoService/.env
